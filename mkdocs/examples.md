@@ -6,7 +6,7 @@
 port-forwarder 8080 remote.example.com 80
 ```
 
-Then open `http://127.0.0.1:8080/` in a browser or with `curl`.
+Then open `127.0.0.1:8080` in a browser or with `curl`.
 
 ## Reach an internal database from this machine
 

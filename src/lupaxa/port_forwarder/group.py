@@ -63,8 +63,10 @@ class PortForwarderGroup:
             worker.start()
         for worker in workers:
             worker.join()
-        if self._error is not None:
-            raise self._error
+        with self._error_lock:
+            error = self._error
+        if isinstance(error, OSError):
+            raise error
 
     def stop(self) -> None:
         """Stop every forwarder in the group."""
