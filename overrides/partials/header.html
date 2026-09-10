@@ -1,0 +1,69 @@
+<!--
+  Custom single-row header for Lupaxa-style documentation sites.
+
+  Retains Material's native logo and drawer while rendering the top-level
+  navigation directly in the header. Theme is locked to slate (no toggle).
+-->
+
+{% set class = "md-header md-header--shadow" %}
+
+<header class="{{ class }}" data-md-component="header">
+  <nav
+    class="md-header__inner md-grid lupaxa-header__inner"
+    aria-label="{{ lang.t('header') }}"
+  >
+    <!-- Link to home -->
+    <a
+      href="{{ config.extra.homepage | d(nav.homepage.url, true) | url }}"
+      class="md-header__button md-logo lupaxa-header__logo"
+      aria-label="{{ config.site_name }}"
+      data-md-component="logo"
+    >
+      {% include "partials/logo.html" %}
+    </a>
+
+    <!-- Button to open navigation drawer (hidden when primary sidebar is off) -->
+    {% if not config.extra.hide_primary_sidebar %}
+    <label
+      class="md-header__button md-icon lupaxa-header__drawer-button"
+      for="__drawer"
+      aria-label="{{ lang.t('drawer.title') }}"
+    >
+      {% set icon = config.theme.icon.menu or "material/menu" %}
+      {% include ".icons/" ~ icon ~ ".svg" %}
+    </label>
+    {% endif %}
+
+    <!-- Top-level desktop navigation -->
+    <nav class="lupaxa-header__nav" aria-label="Primary navigation">
+      <ul class="lupaxa-header__nav-list">
+        {% for nav_item in nav %}
+          {# Sections have url=None; link to the first child (section index). #}
+          <li
+            class="lupaxa-header__nav-item{% if nav_item.active %} lupaxa-header__nav-item--active{% endif %}"
+          >
+            <a
+              class="lupaxa-header__nav-link"
+              href="{% if nav_item.url %}{{ nav_item.url | url }}{% elif nav_item.children %}{{ nav_item.children[0].url | url }}{% else %}{{ '' | url }}{% endif %}"
+              {% if nav_item.active %}aria-current="page"{% endif %}
+            >
+              {{ nav_item.title }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    <!-- Repository link -->
+    {% if config.repo_url %}
+      <div class="md-header__source">
+        {% include "partials/source.html" %}
+      </div>
+    {% endif %}
+
+    <!-- Site language selector -->
+    {% if config.extra.alternate %}
+      {% include "partials/alternate.html" %}
+    {% endif %}
+  </nav>
+</header>
