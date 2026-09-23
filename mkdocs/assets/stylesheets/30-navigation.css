@@ -89,6 +89,7 @@
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.2;
+  white-space: nowrap;
   text-decoration: none;
   background: none;
   border-radius: 0;
@@ -126,7 +127,15 @@
   pointer-events: none;
 }
 
-/* Material controls */
+/* Material controls — GitHub + language picker as one right-hand group */
+
+.lupaxa-header__tools {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  margin-left: auto;
+  pointer-events: auto;
+}
 
 .lupaxa-header__drawer-button {
   display: none;
@@ -136,14 +145,15 @@
 
 /* Repository link (top right) */
 
-.lupaxa-header__inner > .md-header__source {
+.lupaxa-header__tools > .md-header__source {
   position: relative;
   z-index: 3;
   display: flex;
   flex: 0 0 auto;
   align-items: center;
-  margin-left: auto;
-  padding-right: 0.25rem;
+  width: auto;
+  max-width: none;
+  padding-right: 0;
   pointer-events: auto;
 }
 
@@ -159,4 +169,62 @@
 
 .md-header__source .md-source__repository {
   max-width: 14rem;
+}
+
+/* Language preference */
+
+.lupaxa-lang-picker {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  margin-left: 1rem;
+  padding: 0;
+}
+
+.lupaxa-lang-picker__select {
+  color: var(--lupaxa-white);
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.4;
+  appearance: none;
+  cursor: pointer;
+  background-color: rgb(255 255 255 / 10%);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.35rem center;
+  background-size: 0.9rem;
+  border: 1px solid rgb(255 255 255 / 28%);
+  border-radius: var(--lupaxa-radius-button);
+  padding: 0.35rem 1.35rem 0.35rem 0.55rem;
+}
+
+.lupaxa-lang-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.4rem 1rem;
+  color: var(--lupaxa-white);
+  background-color: color-mix(in srgb, var(--lupaxa-blue) 82%, black);
+}
+
+.lupaxa-lang-fallback[hidden] {
+  display: none;
+}
+
+.lupaxa-lang-fallback__text {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.lupaxa-lang-fallback__dismiss {
+  color: var(--lupaxa-white);
+  font-size: 0.85rem;
+  background: none;
+  border: 1px solid rgb(255 255 255 / 40%);
+  border-radius: var(--lupaxa-radius-pill);
+  padding: 0.15rem 0.7rem;
 }

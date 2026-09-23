@@ -1,5 +1,6 @@
+# yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
 # =============================================================================
-# Site Information — replace these placeholders per project
+# Site Information
 # =============================================================================
 
 site_name: Port Forwarder
@@ -19,6 +20,9 @@ extra:
   # Hide left site nav (header already lists pages); keep on-this-page TOC.
   # Default when omitted: false (left nav visible).
   hide_primary_sidebar: false
+  # Viewer language picker (client-side translation; English URLs).
+  # Default when omitted: false (picker hidden).
+  language_picker: true
   # Optional short label for the header GitHub link.
   # If omitted, uses the repo segment of repo_name (org/repo → repo).
   repo_display_name: Port Forwarder
@@ -28,6 +32,7 @@ extra:
     - Where exploration meets precision.
     - Where the untamed meets the engineered.
   # Counter.dev analytics (omit counter_dev_id to disable).
+  # Create a site at https://counter.dev and set a per-project id below.
   counter_dev_id: ef410665-76d4-43fe-9e91-53f26ed1004b
   counter_dev_utcoffset: 0
   social_image: assets/images/the-lupaxa-project-social-card.png
@@ -70,7 +75,7 @@ theme:
   palette:
     scheme: slate
     primary: blue
-    accent: light-blue
+    accent: light blue
 
   icon:
     repo: fontawesome/brands/github
@@ -81,6 +86,9 @@ theme:
 
 plugins:
   - search
+
+hooks:
+  - hooks/asset_cache_bust.py
 
 # =============================================================================
 # Navigation
@@ -142,6 +150,7 @@ extra_css:
 
 extra_javascript:
   - assets/javascript/page-lifecycle.js
+  - assets/javascript/language-preference.js
   - assets/javascript/header-active-nav.js
 
 # =============================================================================

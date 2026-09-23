@@ -54,16 +54,64 @@
       </ul>
     </nav>
 
-    <!-- Repository link -->
+    <div class="lupaxa-header__tools">
     {% if config.repo_url %}
-      <div class="md-header__source">
+      <div class="md-header__source" translate="no">
         {% include "partials/source.html" %}
       </div>
     {% endif %}
 
-    <!-- Site language selector -->
-    {% if config.extra.alternate %}
-      {% include "partials/alternate.html" %}
+    {% if config.extra.language_picker %}
+    <div class="lupaxa-lang-picker" translate="no">
+      <select
+        class="lupaxa-lang-picker__select"
+        id="lupaxa-lang"
+        aria-label="Language"
+      >
+        <option value="en">English</option>
+        <option value="fr">Français</option>
+        <option value="de">Deutsch</option>
+        <option value="es">Español</option>
+        <option value="pt">Português</option>
+        <option value="it">Italiano</option>
+        <option value="nl">Nederlands</option>
+        <option value="pl">Polski</option>
+        <option value="bg">Български</option>
+        <option value="cs">Čeština</option>
+        <option value="da">Dansk</option>
+        <option value="el">Ελληνικά</option>
+        <option value="fi">Suomi</option>
+        <option value="hr">Hrvatski</option>
+        <option value="hu">Magyar</option>
+        <option value="lt">Lietuvių</option>
+        <option value="no">Norsk</option>
+        <option value="ro">Română</option>
+        <option value="sv">Svenska</option>
+        <option value="tr">Türkçe</option>
+        <option value="uk">Українська</option>
+      </select>
+    </div>
     {% endif %}
+    </div>
   </nav>
+  {% if config.extra.language_picker %}
+  <div
+    class="lupaxa-lang-fallback notranslate"
+    id="lupaxa-lang-fallback"
+    hidden
+    role="status"
+    translate="no"
+  >
+    <p class="lupaxa-lang-fallback__text">
+      This page is in English. Your browser can translate it.
+    </p>
+    <button
+      type="button"
+      class="lupaxa-lang-fallback__dismiss"
+      id="lupaxa-lang-fallback-dismiss"
+    >
+      Dismiss
+    </button>
+  </div>
+  {% endif %}
 </header>
