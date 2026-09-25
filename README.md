@@ -4,16 +4,10 @@
   </a>
 </p>
 
-<h1 align="center">port-forwarder</h1>
+<h1 align="center">Port Forwarder</h1>
 
 Listen on a local TCP port and forward each connection to a remote
 host and port.
-
-<p align="center">
-  <a href="https://port-forwarder.thelupaxaproject.org/">Documentation</a>
-  ·
-  <a href="https://github.com/lupaxa-sre-toolbox/port-forwarder">GitHub</a>
-</p>
 
 ## Install
 
@@ -58,6 +52,13 @@ make python-install-dev
 make python-check
 make mkdocs-serve
 ```
+
+## Documentation
+
+The published guide is at
+<https://port-forwarder.thelupaxaproject.org/>.
+
+Site Markdown lives in `mkdocs/`.
 
 <a href="https://github.com/the-lupaxa-project">
     <img src="https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/components/footer-for-child-orgs.svg" alt="The Lupaxa Project Footer" width="100%" />

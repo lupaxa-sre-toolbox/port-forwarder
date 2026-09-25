@@ -1,6 +1,6 @@
 # Reference
 
-## CLI arguments
+## CLI Arguments
 
 | Argument | Required | Description                                                   |
 | :------- | :------- | :------------------------------------------------------------ |
@@ -22,7 +22,7 @@
 `--quiet` are mutually exclusive. IPv6 remotes use
 `LOCAL:[IPv6]:REMOTE`.
 
-## Exit codes
+## Exit Codes
 
 | Code | When                                                        |
 | :--- | :---------------------------------------------------------- |

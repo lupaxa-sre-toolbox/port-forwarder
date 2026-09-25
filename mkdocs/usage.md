@@ -7,7 +7,7 @@ ways. Shared flags apply to every mapping.
 
 IPv6 remotes use brackets: `8080:[::1]:80`.
 
-## CLI flags
+## CLI Flags
 
 | Flag                | Default     | Description                                    |
 | :------------------ | :---------- | :--------------------------------------------- |

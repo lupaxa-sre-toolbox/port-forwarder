@@ -1,4 +1,4 @@
-# Getting started
+# Getting Started
 
 ## Requirements
 
@@ -26,7 +26,7 @@ Module entry point:
 python -m lupaxa.port_forwarder --version
 ```
 
-### From source (development)
+### From Source (Development)
 
 ```bash
 make init
@@ -34,7 +34,7 @@ make python-install-dev
 port-forwarder --version
 ```
 
-## First run
+## First Run
 
 Pass the local listen port, the remote host, and the remote port:
 
@@ -57,7 +57,7 @@ other hosts must connect to the local port, and `--allow` to restrict
 who may. `--max-connections` and `--idle-timeout` cap concurrent
 sessions and quiet ones.
 
-## Makefile helpers
+## Makefile Helpers
 
 ```bash
 make init                 # clone makefile-skills into .makefiles/

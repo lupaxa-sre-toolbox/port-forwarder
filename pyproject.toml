@@ -6,7 +6,7 @@ build-backend = "hatchling.build"
 name = "lupaxa-port-forwarder"
 dynamic = ["version"]
 description = "Forward local TCP traffic to a remote host and port."
-readme = "README-PYPI.md"
+readme = "README.md"
 license = { file = "LICENCE" }
 requires-python = ">=3.13"
 
@@ -64,7 +64,6 @@ path = "src/lupaxa/port_forwarder/version.py"
 include = [
   "src/**",
   "README.md",
-  "README-PYPI.md",
   "LICENCE",
 ]
 

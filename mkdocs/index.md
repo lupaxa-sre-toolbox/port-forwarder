@@ -13,7 +13,7 @@ port-forwarder 8080 remote.example.com 80
 
 You can also run `python -m lupaxa.port_forwarder`.
 
-## What it does
+## What it Does
 
 - Binds a local TCP listener (loopback by default)
 - Accepts each client on its own thread
@@ -23,10 +23,3 @@ You can also run `python -m lupaxa.port_forwarder`.
 - Can run several `LOCAL:HOST:REMOTE` mappings in one process
 - Optionally allowlists sources, caps concurrent sessions, and closes idle ones
 - Exposes `PortForwarder` and `PortForwarderGroup` as library classes
-
-## Next steps
-
-- [Getting started](getting-started.md) — install and first run
-- [Usage](usage.md) — CLI flags and the library API
-- [Reference](reference.md) — arguments, defaults, and exit codes
-- [Examples](examples.md) — common forward recipes
