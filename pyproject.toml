@@ -32,8 +32,8 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://port-forwarder.thelupaxaproject.org/"
-Documentation = "https://port-forwarder.thelupaxaproject.org/"
+Homepage = "https://github.com/lupaxa-sre-toolbox/port-forwarder"
+Documentation = "https://github.com/lupaxa-sre-toolbox/port-forwarder"
 Repository = "https://github.com/lupaxa-sre-toolbox/port-forwarder"
 Issues = "https://github.com/lupaxa-sre-toolbox/port-forwarder/issues"
 
@@ -49,8 +49,6 @@ dev = [
   "hatch>=1.12.0",
   "bump-my-version>=1.2.0",
   "pip-audit>=2.7.0",
-  "mkdocs==1.6.1",
-  "mkdocs-material==9.7.7",
 ]
 test = [
   "pytest>=8.0",
